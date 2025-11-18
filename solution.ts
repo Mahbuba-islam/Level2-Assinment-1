@@ -125,16 +125,13 @@ type UniqueArrayType = Array<number|string>
 
 const getUniqueValues  = (arr1 : UniqueArrayType , arr2 : UniqueArrayType) : UniqueArrayType => {
    let combined : UniqueArrayType = []
-
-    const isExists = (value : number | string) : boolean => {
+   const isExists = (value : number | string) : boolean => {
       const numberValue = typeof value === 'string' ? Number(value) : value
       for(let i = 0; i < combined.length; i++){
         if(combined[i] === numberValue){
-        
-          return true;
+         return true;
         }
-       
-      }
+       }
        return false
     }
 
@@ -144,8 +141,9 @@ const getUniqueValues  = (arr1 : UniqueArrayType , arr2 : UniqueArrayType) : Uni
      if(!isExists(arr1Number)){
         combined[combined.length] = arr1Number
       }
+     }
+
      
-    }
     for(let i = 0; i<arr2.length ; i++){
       const arr2Number = typeof arr2[i] === 'string' ? Number(arr2[i]) : arr2[i]
       if(!isExists(arr2Number)){
